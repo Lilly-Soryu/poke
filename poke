@@ -8,7 +8,8 @@
 host="$(hostname)"
 os="$(lsb_release -ds)"
 kernel="5.17.XX"
-uptime="$(uptime | sed 's/.*up \([^,]*\), .*/\1/')"
+uptime="$(uptime | sed 's/^.* up \+\(.\+\), \+[0-9] user.*$/\1/'
+)"
 packages="$(dpkg -l | wc -l)"
 terminal="Kitty"
 
@@ -72,12 +73,11 @@ c0="${reset}${red}"                # first color
 
 cat <<EOF
 ${nc}  ______
-${nc}  \\   _ \\        __        ${nc}${USER}${ic}${lc}@${nc}${host}${reset}  
+${nc}  \\   _ \\        __        ${nc}${USER}${ic}${lc}@${nc}${host}${reset}
 ${nc}   \\ \\ \\ \\      / /  
 ${nc}    \\ \\_\\ \\    / /   ${nc}OS:        ${ic}${lc}${os}${reset}
 ${nc}     \\  ___\\  /_/    ${nc}KERNEL:    ${ic}${lc}${kernel}${reset}
 ${nc}      \\ \\    _       ${nc}Terminal:  ${ic}${lc}${terminal}${reset}
-${nc}     __\\_\\__(_)_     ${nc}UPTIME:   ${ic}${lc}${uptime}${reset}
+${nc}     __\\_\\__(_)_     ${nc}UPTIME:    ${ic}${lc}${uptime}${reset}
 ${nc}    (___________)    
-
 EOF
