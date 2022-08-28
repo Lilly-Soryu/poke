@@ -7,7 +7,7 @@
 # user is already defined
 host="$(hostname)"
 os="$(lsb_release -ds)"
-kernel="5.17.XX"
+kernel="5.18.XX"
 uptime="$(uptime | sed 's/^.* up \+\(.\+\), \+[0-9] user.*$/\1/'
 )"
 packages="$(dpkg -l | wc -l)"
