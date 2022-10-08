@@ -6,6 +6,6 @@ Meu fork do ufetch
 <p align="center">
 
 
-<img width="600" src="https://files.catbox.moe/vj5txt.png" alt="Material Bread logo">
+<img width="600" src="https://files.catbox.moe/ezv9gv.png" alt="Material Bread logo">
 
 </p>
